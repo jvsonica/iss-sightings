@@ -46,46 +46,46 @@ GET /find-by-gps?latitude=<latitude>&longitude=<longitude>`
 Example output for both requests:
 ```json
 {
-    location: {
-        city: "Oporto-Porto",
-        country: "Portugal",
-        full_location: "Oporto-Porto, Portugal"
+    "location": {
+        "city": "Oporto-Porto",
+        "country": "Portugal",
+        "full_location": "Oporto-Porto, Portugal"
     },
-    sightings: [{
-        sighting: "ISS Sighting",
-        departure: "11° above SE",
-        approach: "20° above SE",
-        maximum_elevation: "20°",
-        duration: "1 minute",
-        timestamp: "Sun, 17 Mar 2019 04:35:00 GMT"
+    "sightings": [{
+        "sighting: "ISS Sighting",
+        "departure": "11° above SE",
+        "approach": "20° above SE",
+        "maximum_elevation": "20°",
+        "duration": "1 minute",
+        "timestamp": "Sun, 17 Mar 2019 04:35:00 GMT"
     }, {
-        sighting: "ISS Sighting",
-        departure: "10° above SW",
-        approach: "10° above WSW",
-        maximum_elevation: "10°",
-        duration: "1 minute",
-        timestamp: "Sun, 17 Mar 2019 06:09:00 GMT"
+        "sighting": "ISS Sighting",
+        "departure": "10° above SW",
+        "approach": "10° above WSW",
+        "maximum_elevation": "10°",
+        "duration": "1 minute",
+        "timestamp": "Sun, 17 Mar 2019 06:09:00 GMT"
     }, {
-        sighting: "ISS Sighting",
-        departure: "10° above S",
-        approach: "14° above S",
-        maximum_elevation: "14°",
-        duration: "less than 1 minute",
-        timestamp: "Mon, 18 Mar 2019 05:20:00 GMT"
+        "sighting": "ISS Sighting",
+        "departure": "10° above S",
+        "approach": "14° above S",
+        "maximum_elevation": "14°",
+        "duration": "less than 1 minute",
+        "timestamp": "Mon, 18 Mar 2019 05:20:00 GMT"
     }, {
-        sighting: "ISS Sighting",
-        departure: "29° above S",
-        approach: "10° above SSW",
-        maximum_elevation: "29°",
-        duration: "2 minutes",
-        timestamp: "Wed, 20 Mar 2019 20:14:00 GMT"
+        "sighting": "ISS Sighting",
+        "departure": "29° above S",
+        "approach": "10° above SSW",
+        "maximum_elevation": "29°",
+        "duration": "2 minutes",
+        "timestamp": "Wed, 20 Mar 2019 20:14:00 GMT"
     }, {
-        sighting: "ISS Sighting",
-        departure: "13° above E",
-        approach: "10° above S",
-        maximum_elevation: "19°",
-        duration: "4 minutes",
-        timestamp: "Thu, 21 Mar 2019 19:24:00 GMT"
+        "sighting": "ISS Sighting",
+        "departure": "13° above E",
+        "approach": "10° above S",
+        "maximum_elevation": "19°",
+        "duration": "4 minutes",
+        "timestamp": "Thu, 21 Mar 2019 19:24:00 GMT"
     }]
 }
 ```
