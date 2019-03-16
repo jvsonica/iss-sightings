@@ -1,5 +1,4 @@
 import datetime
-import json
 import re
 import math
 import pandas as pd
@@ -52,15 +51,8 @@ def get_sightings(country, region, city):
     return sightings
 
 
-def find_location_from_ip():
-    r = requests.get('http://freegeoip.net/json')
-    j = json.loads(r.text)
-    [latitude, longitude] = j['latitude'], j['longitude']
-    return find_location_by_gps_coordinates(latitude, longitude)
-
-
 def find_location_by_city_name(city=None):
-    matching_locations = df_locations[df_locations['full_location'].str.lower() == city.lower()]
+    matching_locations = df_locations[df_locations['full_location'].str.lower().str.contains(city.lower())]
 
     if matching_locations.empty:
         raise BaseException('City not found.')
