@@ -4,6 +4,7 @@ import math
 import pandas as pd
 import requests
 from bs4 import BeautifulSoup
+from .error import InvalidUsage
 
 from src.possible_addresses import locations
 
@@ -47,7 +48,7 @@ def get_sightings(country, region, city):
 
     # Remove sightings that have already occurred
     sightings = [s for s in sightings if s['timestamp'] > datetime.datetime.now()]
-    sightings = sorted(sightings, key=lambda s: s['timestamp'])
+    sightings = sorted(sightings, key=lambda s: s['timestamp'])[:5]
     return sightings
 
 
@@ -55,7 +56,7 @@ def find_location_by_city_name(city=None):
     matching_locations = df_locations[df_locations['full_location'].str.lower().str.contains(city.lower())]
 
     if matching_locations.empty:
-        raise BaseException('City not found.')
+        raise InvalidUsage('City not found.')
 
     return matching_locations.iloc[0]
 
