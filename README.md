@@ -52,7 +52,7 @@ Example output for both requests:
         "full_location": "Oporto-Porto, Portugal"
     },
     "sightings": [{
-        "sighting: "ISS Sighting",
+        "sighting": "ISS Sighting",
         "departure": "11° above SE",
         "approach": "20° above SE",
         "maximum_elevation": "20°",
