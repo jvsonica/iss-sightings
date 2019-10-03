@@ -14,14 +14,15 @@ def home():
 @app.route('/find-by-city', methods=['GET'])
 def find_by_city():
     location = find_location_by_city_name(request.args.get('city'))
+    sightings = get_sightings(location.country, location.region, location.city)
     return json.dumps({
         'location': {
             'city': location.city,
             'country': location.country,
             'full_location': location.full_location
         },
-        'sightings': get_sightings(location.country, location.region, location.city)
-    }, cls=Flask.json_encoder)
+        'sightings': sightings
+    }, cls=Flask.json_encoder, ensure_ascii=False)
 
 
 @app.route('/find-by-gps', methods=['GET'])
@@ -29,14 +30,15 @@ def find_by_gps():
     latitude = float(request.args.get('latitude'))
     longitude = float(request.args.get('longitude'))
     location = find_location_by_gps_coordinates(latitude, longitude)
+    sightings = get_sightings(location.country, location.region, location.city)
     return json.dumps({
         'location': {
             'city': location.city,
             'country': location.country,
             'full_location': location.full_location
         },
-        'sightings': get_sightings(location.country, location.region, location.city)
-    }, cls=Flask.json_encoder)
+        'sightings': sightings
+    }, cls=Flask.json_encoder, ensure_ascii=False)
 
 
 @app.errorhandler(InvalidUsage)
