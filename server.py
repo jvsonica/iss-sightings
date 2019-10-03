@@ -5,6 +5,11 @@ import json
 app = Flask(__name__)
 
 
+@app.route('/', methods=['GET'])
+def home():
+    return 'Welcome to iss-sightings-api'
+
+
 @app.route('/find-by-city', methods=['GET'])
 def find_by_city():
     location = find_location_by_city_name(request.args.get('city'))
@@ -39,4 +44,6 @@ def handle_invalid_usage(error):
     response['status_code'] = error.status_code
     return json.dumps(response)
 
-app.run('0.0.0.0', 5000)
+
+if __name__ == '__main__':
+    app.run('0.0.0.0', 5000)
