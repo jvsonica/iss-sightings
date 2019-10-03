@@ -1,1 +1,1 @@
-web: gunicorn --workers 4 --bind 0.0.0.0:8080 --preload server:app
+web: gunicorn --workers 4 --bind 0.0.0.0:${PORT} --preload server:app
