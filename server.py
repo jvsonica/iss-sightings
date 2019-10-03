@@ -47,4 +47,4 @@ def handle_invalid_usage(error):
 
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', os.get('PORT', 5000))
+    app.run('0.0.0.0', os.environ.get('PORT', 5000))
