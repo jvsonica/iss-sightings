@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request
 from src.find import get_sightings, find_location_by_city_name, find_location_by_gps_coordinates
 from src.error import InvalidUsage
@@ -46,4 +47,4 @@ def handle_invalid_usage(error):
 
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', 5000)
+    app.run('0.0.0.0', os.get('PORT', 5000))
