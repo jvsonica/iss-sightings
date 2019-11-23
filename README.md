@@ -46,46 +46,57 @@ GET /find-by-gps?latitude=<latitude>&longitude=<longitude>`
 Example output for both requests:
 ```json
 {
-    "location": {
-        "city": "Oporto-Porto",
-        "country": "Portugal",
-        "full_location": "Oporto-Porto, Portugal"
+    "location":{
+        "city":"Braga",
+        "full_location":"Braga, Portugal",
+        "country":"Portugal"
     },
-    "sightings": [{
-        "sighting": "ISS Sighting",
-        "departure": "11° above SE",
-        "approach": "20° above SE",
-        "maximum_elevation": "20°",
-        "duration": "1 minute",
-        "timestamp": "Sun, 17 Mar 2019 04:35:00 GMT"
-    }, {
-        "sighting": "ISS Sighting",
-        "departure": "10° above SW",
-        "approach": "10° above WSW",
-        "maximum_elevation": "10°",
-        "duration": "1 minute",
-        "timestamp": "Sun, 17 Mar 2019 06:09:00 GMT"
-    }, {
-        "sighting": "ISS Sighting",
-        "departure": "10° above S",
-        "approach": "14° above S",
-        "maximum_elevation": "14°",
-        "duration": "less than 1 minute",
-        "timestamp": "Mon, 18 Mar 2019 05:20:00 GMT"
-    }, {
-        "sighting": "ISS Sighting",
-        "departure": "29° above S",
-        "approach": "10° above SSW",
-        "maximum_elevation": "29°",
-        "duration": "2 minutes",
-        "timestamp": "Wed, 20 Mar 2019 20:14:00 GMT"
-    }, {
-        "sighting": "ISS Sighting",
-        "departure": "13° above E",
-        "approach": "10° above S",
-        "maximum_elevation": "19°",
-        "duration": "4 minutes",
-        "timestamp": "Thu, 21 Mar 2019 19:24:00 GMT"
-    }]
+    "sightings":[
+        {
+            "identifier":"d98c2449644fd612",
+            "approach":"13° above WNW",
+            "departure":"13° above WNW",
+            "timestamp":"Sat, 23 Nov 2019 19:49:00 GMT",
+            "duration":"less than  1 minute",
+            "sighting":"ISS Sighting",
+            "maximum_elevation":"13°"
+        },
+        {
+            "identifier":"ee38d3548f2cc1bd",
+            "approach":"23° above W",
+            "departure":"37° above NW",
+            "timestamp":"Sun, 24 Nov 2019 19:01:00 GMT",
+            "duration":"1 minute",
+            "sighting":"ISS Sighting",
+            "maximum_elevation":"37°"
+        },
+        {
+            "identifier":"51c4707a566cf03c",
+            "approach":"33° above W",
+            "departure":"20° above NE",
+            "timestamp":"Mon, 25 Nov 2019 18:13:00 GMT",
+            "duration":"3 minutes",
+            "sighting":"ISS Sighting",
+            "maximum_elevation":"59°"
+        },
+        {
+            "identifier":"ad703005aad5e75c",
+            "approach":"10° above WNW",
+            "departure":"10° above WNW",
+            "timestamp":"Mon, 25 Nov 2019 19:49:00 GMT",
+            "duration":"less than  1 minute",
+            "sighting":"ISS Sighting",
+            "maximum_elevation":"10°"
+        },
+        {
+            "identifier":"59b1c093080a7309",
+            "approach":"12° above WNW",
+            "departure":"21° above NNW",
+            "timestamp":"Tue, 26 Nov 2019 19:01:00 GMT",
+            "duration":"2 minutes",
+            "sighting":"ISS Sighting",
+            "maximum_elevation":"21°"
+        }
+    ]
 }
 ```

@@ -3,6 +3,7 @@ import re
 import math
 import pandas as pd
 import requests
+import hashlib
 from bs4 import BeautifulSoup
 from .error import InvalidUsage
 
@@ -17,6 +18,9 @@ def get_sightings(country, region, city):
         country, region, city
     )
     r = requests.get(rss)
+
+    # Create hashing interface to be used to calculate an identifier of all sightings
+    m = hashlib.md5()
 
     # Parse the information from the received feed
     xml = BeautifulSoup(r.text, features='html.parser')
@@ -37,13 +41,19 @@ def get_sightings(country, region, city):
         approach = re.search(r'Approach:\s(.*)\s<br/>', info).groups()[0]
         departure = re.search(r'Departure:\s(.*)\s<br/>', info).groups()[0]
 
+        m.update(country.encode())
+        m.update(city.encode())
+        m.update(date.encode())
+        hash_content = m.hexdigest()[:16]
+
         sightings.append({
             'sighting': item.find('title').contents[0][11:],
             'timestamp': datetime.datetime.strptime(date + time, '%A %b %d, %Y %I:%M %p'),
             'duration': duration,
             'maximum_elevation': maximum_elevation,
             'approach': approach,
-            'departure': departure
+            'departure': departure,
+            'identifier': hash_content
         })
 
     # Remove sightings that have already occurred
